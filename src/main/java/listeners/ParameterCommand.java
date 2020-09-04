@@ -16,8 +16,7 @@ public abstract class ParameterCommand extends CommandListener {
     @Override
     void command(@NotNull GuildMessageReceivedEvent event, String command) {
         String raw = event.getMessage().getContentRaw();
-        raw = raw.substring(raw.indexOf(command) + command.length()).strip();
-
+        raw = raw.substring(raw.indexOf(command) + command.length()).trim();
         command(event, (raw.equals("") ? new ArrayList<>() : Arrays.asList(raw.split(" "))));
     }
 

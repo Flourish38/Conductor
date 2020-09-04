@@ -27,9 +27,9 @@ public abstract class CommandListener extends ListenerAdapter {
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         if (event.getAuthor().isBot()) return;
 
-        var raw = event.getMessage().getContentRaw();
+        String raw = event.getMessage().getContentRaw();
         String mention = event.getJDA().getSelfUser().getAsMention();
-        for(var command : commands)
+        for(String command : commands)
         {
             if((raw.startsWith(mention + " " + command)) // ping as prefix
                     || raw.startsWith(BotConfig.PREFIX + command)) // msg starts with prefix

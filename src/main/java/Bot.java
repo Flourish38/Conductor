@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Bot {
 
     public static void main(String[] args) throws IOException, LoginException {
-        var file = new File("token.txt");
+        File file = new File("token.txt");
         if(!file.exists()){
             System.out.println("A new file \"token.txt\" has been created. Put the OAuth token of the bot in that file.");
             System.out.println(file.createNewFile());
@@ -23,7 +23,7 @@ public class Bot {
         }
         JDA jda = JDABuilder.createDefault(new Scanner(file).nextLine())
                 .addEventListeners(
-                        new ReadyTimer(),
+                        new HelpCommand(),
                         new PingCommand(),
                         new ShutdownCommand()
                 ).build();
