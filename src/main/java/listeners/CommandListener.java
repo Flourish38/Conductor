@@ -34,6 +34,10 @@ public abstract class CommandListener extends ListenerAdapter {
             if((raw.startsWith(mention + " " + command)) // ping as prefix
                     || raw.startsWith(BotConfig.PREFIX + command)) // msg starts with prefix
             {
+                if(event.getAuthor().getIdLong() != BotConfig.BOT_ADMIN_ID){
+                    event.getChannel().sendMessage("You have no power over me.").queue();
+                    return;
+                }
                 command(event, command);
                 break;
             }

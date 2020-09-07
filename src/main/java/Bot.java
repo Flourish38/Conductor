@@ -26,7 +26,12 @@ public class Bot {
                         new StartupPresence(),
                         new HelpCommand(),
                         new PingCommand(),
-                        new ShutdownCommand()
+                        new ShutdownCommand(),
+                        new StartCommand(),
+                        new EndCommand(),
+                        new RestartCommand(),
+                        new ListCommand()
                 ).build();
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> ShutdownHandler.handle(jda)));
     }
 }
