@@ -7,7 +7,7 @@ import java.util.List;
 
 public class RestartCommand extends ParameterCommand {
     public RestartCommand() {
-        super("end");
+        super("restart");
     }
 
     @Override
