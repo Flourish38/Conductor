@@ -13,7 +13,12 @@ public class HelpCommand extends Command {
 
         String[] commands = new String[]{
                 "help",
-                "ping"
+                "ping",
+                "shutdown",
+                "start",
+                "end",
+                "restart",
+                "list"
         };
         message = "List of commands:\n" + BotConfig.PREFIX + String.join("\n" + BotConfig.PREFIX, commands);
     }
