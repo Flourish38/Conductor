@@ -26,7 +26,7 @@ public class ShutdownCommand extends Command {
      * @param event the shutdown command.
      */
     private static void handle(GuildMessageReceivedEvent event) {
-
+        BotManager.end("all");
     }
 }
 
