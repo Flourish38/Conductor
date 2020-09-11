@@ -14,6 +14,7 @@ public class ShutdownCommand extends Command {
         event.getChannel().sendMessage("Shutting down...").queue();
         handle(event);
         event.getJDA().shutdown();
+        BotManager.end("all");
     }
 
     /**
@@ -26,7 +27,7 @@ public class ShutdownCommand extends Command {
      * @param event the shutdown command.
      */
     private static void handle(GuildMessageReceivedEvent event) {
-        BotManager.end("all");
+
     }
 }
 
