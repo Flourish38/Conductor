@@ -12,22 +12,7 @@ public class ShutdownCommand extends Command {
     void command(@NotNull GuildMessageReceivedEvent event) {
         if(event.getAuthor().getIdLong() != BotConfig.BOT_ADMIN_ID) return;
         event.getChannel().sendMessage("Shutting down...").queue();
-        handle(event);
-        event.getJDA().shutdown();
-        BotManager.end("all");
-    }
-
-    /**
-     * This method is for any cleanup that the shutdown command might need to do. By default,
-     * it doesn't need to do anything, but if you're doing stuff like creating temporary text channels,
-     * this is where you should be deleting them.
-     *
-     * I don't care how you get the channel IDs here, you're clever, you figure it out.
-     *
-     * @param event the shutdown command.
-     */
-    private static void handle(GuildMessageReceivedEvent event) {
-
+        System.exit(0); // This will trigger the hook contained in ShutdownHandler.java
     }
 }
 
